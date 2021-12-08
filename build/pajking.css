@@ -1,0 +1,401 @@
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.ly-flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.ly-vbox {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.ly-vbox-reverse {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ly-hbox {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+}
+
+.ly-hbox-reverse {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.ly-justify-start {
+  justify-content: flex-start;
+}
+
+.ly-justify-center {
+  justify-content: center;
+}
+
+.ly-justify-end {
+  justify-content: flex-end;
+}
+
+.ly-justify-space-between {
+  justify-content: space-between;
+}
+
+.ly-justify-space-around {
+  justify-content: space-around;
+}
+
+.ly-align-start {
+  align-items: flex-start;
+}
+
+.ly-align-end {
+  align-items: flex-end;
+}
+
+.ly-align-center {
+  align-items: center;
+}
+
+.ly-align-stretch {
+  align-items: stretch;
+}
+
+.ly-align-baseline {
+  align-items: baseline;
+}
+
+.ly-flex-fix {
+  flex: 0 0 auto;
+}
+
+.ly-flex-1 {
+  flex: 1 1 0;
+}
+
+.ly-flex-2 {
+  flex: 2 2 0;
+}
+
+.ly-flex-3 {
+  flex: 3 3 0;
+}
+
+.ly-flex-4 {
+  flex: 4 4 0;
+}
+
+.ly-flex-5 {
+  flex: 5 5 0;
+}
+
+.ly-flex-6 {
+  flex: 6 6 0;
+}
+
+.ly-flex-7 {
+  flex: 7 7 0;
+}
+
+.ly-flex-8 {
+  flex: 8 8 0;
+}
+
+.ly-flex-9 {
+  flex: 9 9 0;
+}
+
+.ly-flex-10 {
+  flex: 10 10 0;
+}
+
+.ly-wrap {
+  flex-wrap: wrap;
+}
+
+.ly-nowrap {
+  flex-wrap: nowrap;
+}
+
+.ly-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.ly-noscroll {
+  overflow: hidden;
+}
+
+.ly-scroll {
+  overflow: auto;
+}
+
+.ly-scroll-x {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.ly-scroll-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ly-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font-family: sans-serif;
+  font-size: 16px;
+  --activeColor: #3700ff;
+}
+
+.inputGroup {
+  position: relative;
+  height: 40px;
+  margin-bottom: 30px;
+  width: 220px;
+}
+.inputGroup svg {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  z-index: 2;
+}
+.inputGroup .textInput {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  border: 0;
+  border-bottom: 1px solid #707070;
+  padding-left: 35px;
+}
+.inputGroup .textInput::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+.inputGroup .textInput:focus {
+  outline: none;
+  border-bottom: 1px solid var(--activeColor);
+}
+
+.btn {
+  font-size: 16px;
+  padding: 9px 15px 8px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.btn.btnDefault {
+  background: linear-gradient(#ffffff, #e2e2e2 95%, #989898);
+  border: 1px solid #afafaf;
+}
+.btn.btnDefault:active {
+  background: linear-gradient(#e2e2e2, #f2f2f2);
+}
+.btn.btnPrimary {
+  background: linear-gradient(#3391cc, #106498 95%, #1a4966);
+  color: white;
+  border: 1px solid #4a789f;
+}
+.btn.btnPrimary:active {
+  background: linear-gradient(#106498, #1a4966);
+}
+.btn.btnDanger {
+  background: linear-gradient(#cc3333, #981010 95%, #661a1a);
+  color: white;
+  border: 1px solid #9f4a4a;
+}
+.btn.btnDanger:active {
+  background: linear-gradient(#981010, #661a1a);
+}
+
+.tablica {
+  font-size: 16px;
+  padding: 9px 15px 8px 27px;
+  border-radius: 7px;
+  box-shadow: inset 0px 0px 0px 1px #222;
+  border: 1px solid #222;
+  display: inline-block;
+  font-weight: bold;
+  position: relative;
+}
+.tablica::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 100%;
+  background: #0065a3;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.tablica.input {
+  width: 135px;
+  height: 37px;
+  margin-right: 18px;
+}
+.tablica .tablicaInput {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding-left: 27px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 37px;
+  border-radius: 7px;
+  background: transparent;
+}
+.tablica .tablicaInput::placeholder {
+  color: #aaa;
+}
+.tablica .tablicaLabel {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0px;
+  border: 0;
+  width: 133px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  padding: 5px;
+  padding-left: 17px;
+}
+.tablica .tablicaLabel::placeholder {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ababab;
+}
+
+.tableLine {
+  height: 1px;
+  width: 100%;
+  background: #cacaca;
+  margin-top: 30px;
+}
+
+.info {
+  font-size: 16px;
+  padding: 9px 15px 8px 15px;
+  border-radius: 7px;
+  display: inline-block;
+}
+.info.infoGreen {
+  background-color: #dcf2db;
+  border: 1px solid #a2d1a0;
+}
+.info.infoRed {
+  background-color: #ffcece;
+  border: 1px solid #ea9a9a;
+}
+
+.loginLogo {
+  margin-bottom: 30px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+a,
+a:visited,
+a:active {
+  color: var(--activeColor);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#loginButton {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+#loginForm {
+  margin: 0;
+  padding: 0;
+}
+
+.register {
+  text-align: center;
+}
+
+#header {
+  padding: 20px 40px;
+}
+#header .topLink {
+  margin-left: 40px;
+}
+#header .topLink svg {
+  vertical-align: middle;
+  margin-right: 8px;
+  position: relative;
+  top: -1px;
+}
+
+#mainTable {
+  width: 900px;
+  margin: auto;
+}
+#mainTable .col-1 {
+  width: 60px;
+}
+#mainTable .col-3,
+#mainTable .col-4 {
+  width: 192px;
+  text-align: right;
+  padding-right: 10px;
+}
+#mainTable .tableHeader {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #c6c6c6;
+  height: 65px;
+  line-height: 65px;
+  font-weight: bold;
+}
+#mainTable .tableRow {
+  padding: 30px 0px 10px 0px;
+}
+
+.tablicaOuter {
+  position: relative;
+}
+.tablicaOuter .label {
+  position: absolute;
+  left: 15px;
+  top: calc(100% + 5px);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #aaa;
+}
+
+/*# sourceMappingURL=pajking.css.map */

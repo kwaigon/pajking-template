@@ -63,7 +63,7 @@ typings/
 *.scssc
 .idea/
 .vscode/
-/build
+# /build
 /widget
 package-lock\.json
 .history/
@@ -72,3 +72,5 @@ package-lock\.json
 .DS_Store
 
 dist/
+
+*.map
