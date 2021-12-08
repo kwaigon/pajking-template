@@ -1,0 +1,179 @@
+// ------------------------------------
+//
+//  flexbox css layout class wrapper
+//  ninoslav@gmail.com
+//
+// -----------------------------------
+
+* {
+    min-height: 0;
+    min-width: 0;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+@mixin displayFlex($flexDirection: row, $justifyContent: flex-start, $flex: none, $flexWrap: nowrap) {
+    display: flex;
+    flex: $flex;
+    flex-direction: $flexDirection;
+    flex-wrap: $flexWrap;
+    justify-content: $justifyContent;
+}
+
+@mixin flexDisplay {
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flexDirection($flexDirection: row) {
+    flex-direction: $flexDirection;
+}
+
+@mixin flexGSH($flexGrow: none, $flexShrink: none, $flexBasis: 0) {
+    flex: $flexGrow $flexShrink $flexBasis;
+}
+
+@mixin flex($flex) {
+    flex: $flex;
+}
+
+@mixin flexJustify($justifyContent: flex-start) {
+    justify-content: $justifyContent;
+}
+
+@mixin flexAlign($alignItems: stretch) {
+    align-items: $alignItems;
+}
+
+@mixin flexWrap($flexWrap: nowrap) {
+    flex-wrap: $flexWrap;
+}
+
+@mixin hbox {
+    @include flexDisplay;
+
+    @include flexDirection(row);
+}
+
+@mixin vbox {
+    @include flexDisplay;
+
+    @include flexDirection(column);
+}
+
+.ly-flex {
+    @include flexDisplay;
+}
+
+.ly-vbox {
+    @include flexDisplay;
+
+    @include flexDirection(column);
+}
+
+.ly-vbox-reverse {
+    @include flexDisplay;
+
+    @include flexDirection(column-reverse);
+}
+
+.ly-hbox {
+    @include flexDisplay;
+
+    @include flexDirection(row);
+}
+
+.ly-hbox-reverse {
+    @include flexDisplay;
+
+    @include flexDirection(row-reverse);
+}
+
+.ly-justify-start {
+    @include flexJustify(flex-start);
+}
+
+.ly-justify-center {
+    @include flexJustify(center);
+}
+
+.ly-justify-end {
+    @include flexJustify(flex-end);
+}
+
+.ly-justify-space-between {
+    @include flexJustify(space-between);
+}
+
+.ly-justify-space-around {
+    @include flexJustify(space-around);
+}
+
+.ly-align-start {
+    @include flexAlign(flex-start);
+}
+
+.ly-align-end {
+    @include flexAlign(flex-end);
+}
+
+.ly-align-center {
+    @include flexAlign(center);
+}
+
+.ly-align-stretch {
+    @include flexAlign(stretch);
+}
+
+.ly-align-baseline {
+    @include flexAlign(baseline);
+}
+
+.ly-flex-fix {
+    flex: 0 0 auto;
+}
+
+@for $i from 1 through 10 {
+    .ly-flex-#{$i} {
+        @include flexGSH(#{$i}, #{$i}, 0);
+    }
+}
+
+.ly-wrap {
+    @include flexWrap(wrap);
+}
+
+.ly-nowrap {
+    @include flexWrap(nowrap);
+}
+
+.ly-wrap-reverse {
+    @include flexWrap(wrap-reverse);
+}
+
+.ly-noscroll {
+    overflow: hidden;
+}
+
+.ly-scroll {
+    overflow: auto;
+}
+
+.ly-scroll-x {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.ly-scroll-y {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ly-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
